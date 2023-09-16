@@ -142,7 +142,7 @@ while True:
 				model="gpt-3.5-turbo",
 				messages=msgs
 			)
-			msgs.append(resp["choices"]["message"])
+			msgs.append(resp["choices"][0]["message"])
 			print("AI: " + msgs[-1]["content"])
 		elif cmd == "list":
 			arg1 = inp.split(" ")[1]
@@ -153,7 +153,7 @@ while True:
 				model="gpt-3.5-turbo",
 				messages=msgs
 			)
-			msgs.append(resp["choices"]["message"])
+			msgs.append(resp["choices"][0]["message"])
 			print("AI: " + msgs[-1]["content"])
 		else:
 			print("NLFS: There is no command named that")
